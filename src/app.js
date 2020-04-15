@@ -8,6 +8,7 @@ const staticDir = path.join(__dirname,'../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 const url = 'http://dummy.restapiexample.com/api/v1/employees'
+const port = process.env.PORT || 3000
 
 app.use(express.static(staticDir))
 app.set('view engine', 'hbs')
@@ -61,6 +62,6 @@ app.get('*', (req, resp) => {
         }
     })
 }
-app.listen(3000, () => {
-    console.log('app is up and running....')
+app.listen(port, () => {
+    console.log('app is up and running at..'+port)
 })
